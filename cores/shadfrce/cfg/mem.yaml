@@ -1,0 +1,41 @@
+params:
+  - { name: SND_OFFSET,  value: "(`SND_START-`JTFRAME_BA2_START) >> 1" }
+  - { name: PCM_OFFSET,  value: "(`PCM_START-`JTFRAME_BA2_START) >> 1" }
+  - { name: OBJ4_OFFSET, value: "(`OBJ4_START-`JTFRAME_BA2_START) >> 1" }
+
+  - { name: CHAR_OFFSET, value: "(2<<22) | ((`CHAR_START-`JTFRAME_BA2_START) >> 1)" }
+download:
+
+  post_addr: true
+clocks:
+  clk:
+    - freq: 3579545
+      outputs:
+        - cen_fm
+        - cen_fm2
+
+    - freq: 1686900
+      outputs:
+        - cen_oki
+audio:
+
+  gain: 0.79
+  rsum: 6k
+  channels:
+    - { name: fm,  module: jt51,   rsum: 12k, pre: 0.52 }
+    - { name: pcm, module: jt6295, rsum: 12k, fir: fir_192k_4k.csv }
+sdram:
+  banks:
+    - buses:
+        - { name: main, addr_width: 20, data_width: 16 }
+    - buses:
+        - { name: scr,  addr_width: 21, data_width: 32 }
+    - buses:
+        - { name: scr2, addr_width: 20, data_width: 32 }
+        - { name: obj4, addr_width: 21, data_width: 16, offset: OBJ4_OFFSET }
+        - { name: snd,  addr_width: 16, data_width: 8,  offset: SND_OFFSET }
+        - { name: pcm,  addr_width: 19, data_width: 8,  offset: PCM_OFFSET }
+    - buses:
+        - { name: obj,  addr_width: 23, data_width: 32 }
+bram:
+  - { name: fgrom, addr_width: 17, data_width: 8, rom: { offset: CHAR_OFFSET } }

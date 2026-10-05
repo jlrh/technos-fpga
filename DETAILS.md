@@ -120,3 +120,16 @@ Este repo contiene **solo el código del core** (`cores/<core>/`). El framework 
 
 **GPLv3** (ver [`LICENSE`](LICENSE)) — la exigen las dependencias JTFRAME / jt51 / jt6295; sus avisos de
 copyright se conservan en las fuentes.
+
+<!-- omf_release:dependencias:ffshadfrce -->
+## Dependencias externas de `ffshadfrce`
+
+Este repositorio contiene **solo el código de los cores**. Para compilar `ffshadfrce`
+hacen falta estas piezas, que se distribuyen desde su propio origen:
+
+| Qué | De dónde | Dónde va |
+|---|---|---|
+| jtframe — framework de compilacion y modulos comunes (SDRAM, descarga, CPUs 68000/Z80, RAM) | [https://github.com/jotego/jtframe](https://github.com/jotego/jtframe) | `modules/jtframe` |
+| jt51 — YM2151 | [https://github.com/jotego/jt51](https://github.com/jotego/jt51) | `modules/jt51` |
+| jt6295 — OKI M6295 | [https://github.com/jotego/jt6295](https://github.com/jotego/jt6295) | `modules/jt6295` |
+<!-- /omf_release:dependencias:ffshadfrce -->
