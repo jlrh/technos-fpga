@@ -18,6 +18,8 @@ wave effect. 320×240, 15.625 kHz / 57.44 Hz.
 **Status: runs on MiSTer** — boots through its RAM/ROM check and plays its attract mode on hardware. In
 simulation, the video matches MAME pixel-for-pixel in 120 of 120 reference scenes (attract and gameplay); the
 sound path (Z80 + YM2151 + OKI) follows MAME's sound commands, with the FM/ADPCM balance measured against MAME.
+The **Japanese version** (*Shadow Force - Henshin Ninja*, `shadfrcej`) is included as an alternative `.mra` in
+`cores/shadfrce/mra/_alternatives/_Shadow Force/`, with the same `.rbf` and the same `shadfrce.zip`.
 Not implemented yet: **flip screen**, and the **US version** (`shadfrceu`, 6 buttons).
 
 A prebuilt `.rbf` is in [`releases/`](releases/) — **distributable**: all game ROMs are loaded at **runtime**
@@ -81,6 +83,8 @@ usa la pantalla de título para su efecto de ondulación. 320×240, 15,625 kHz /
 **Estado: funciona en MiSTer** — arranca pasando su RAM/ROM check y reproduce el modo demo en la placa. En
 simulación, el vídeo coincide píxel a píxel con MAME en 120 de 120 escenas de referencia (demo y partida); el
 sonido (Z80 + YM2151 + OKI) sigue los comandos de sonido de MAME, con el balance FM/ADPCM medido contra MAME.
+La **versión japonesa** (*Shadow Force - Henshin Ninja*, `shadfrcej`) va como `.mra` alternativa en
+`cores/shadfrce/mra/_alternatives/_Shadow Force/`, con el mismo `.rbf` y el mismo `shadfrce.zip`.
 Aún sin implementar: **volteo de pantalla** y la **versión US** (`shadfrceu`, 6 botones).
 
 Hay un `.rbf` precompilado en [`releases/`](releases/) — **distribuible**: todas las ROMs del juego se cargan
