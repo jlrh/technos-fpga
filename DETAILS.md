@@ -15,12 +15,14 @@ from scratch for this core: two 16×16 6bpp scroll layers, an 8×8 4bpp text lay
 (up to 8 tiles tall), global brightness, and the per-line raster interrupt that the title screen uses for its
 wave effect. 320×240, 15.625 kHz / 57.44 Hz.
 
-**Status: runs on MiSTer** — boots through its RAM/ROM check and plays its attract mode on hardware. In
+**Status: playable on MiSTer** — tested on hardware (boot, attract, gameplay, sound and controls). In
 simulation, the video matches MAME pixel-for-pixel in 120 of 120 reference scenes (attract and gameplay); the
 sound path (Z80 + YM2151 + OKI) follows MAME's sound commands, with the FM/ADPCM balance measured against MAME.
-The **Japanese version** (*Shadow Force - Henshin Ninja*, `shadfrcej`) is included as an alternative `.mra` in
+The **Japanese version** (*Shadow Force - Henshin Ninja*, `shadfrcej`) and the **US version** (`shadfrceu`) are
+included as alternative `.mra` files in
 `cores/shadfrce/mra/_alternatives/_Shadow Force/`, with the same `.rbf` and the same `shadfrce.zip`.
-Not implemented yet: **flip screen**, and the **US version** (`shadfrceu`, 6 buttons).
+The US version uses **six buttons** (Weak Punch, Weak Kick, Jump, Strong Punch, Strong Kick, Transform); the
+World and Japanese versions use three (Punch, Kick, Jump). Not implemented yet: **flip screen**.
 
 A prebuilt `.rbf` is in [`releases/`](releases/) — **distributable**: all game ROMs are loaded at **runtime**
 from the `.mra`; the bitstream bakes no game data. Or build from source (`cores/shadfrce/`). See
@@ -80,12 +82,14 @@ escritos de cero para este core: dos capas de scroll de 16×16 a 6 bpp, una capa
 512 sprites de 16×16 a 5 bpp (hasta 8 tiles de alto), brillo global y la interrupción de raster por línea que
 usa la pantalla de título para su efecto de ondulación. 320×240, 15,625 kHz / 57,44 Hz.
 
-**Estado: funciona en MiSTer** — arranca pasando su RAM/ROM check y reproduce el modo demo en la placa. En
+**Estado: jugable en MiSTer** — probado en placa (arranque, demo, partida, sonido y controles). En
 simulación, el vídeo coincide píxel a píxel con MAME en 120 de 120 escenas de referencia (demo y partida); el
 sonido (Z80 + YM2151 + OKI) sigue los comandos de sonido de MAME, con el balance FM/ADPCM medido contra MAME.
-La **versión japonesa** (*Shadow Force - Henshin Ninja*, `shadfrcej`) va como `.mra` alternativa en
+La **versión japonesa** (*Shadow Force - Henshin Ninja*, `shadfrcej`) y la **versión US** (`shadfrceu`) van como
+`.mra` alternativas en
 `cores/shadfrce/mra/_alternatives/_Shadow Force/`, con el mismo `.rbf` y el mismo `shadfrce.zip`.
-Aún sin implementar: **volteo de pantalla** y la **versión US** (`shadfrceu`, 6 botones).
+La versión US usa **seis botones** (Weak Punch, Weak Kick, Jump, Strong Punch, Strong Kick, Transform); la World
+y la japonesa, tres (Punch, Kick, Jump). Aún sin implementar: **volteo de pantalla**.
 
 Hay un `.rbf` precompilado en [`releases/`](releases/) — **distribuible**: todas las ROMs del juego se cargan
 en **tiempo de ejecución** desde el `.mra`; el bitstream no lleva datos del juego. O compílalo desde las

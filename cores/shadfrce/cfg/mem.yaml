@@ -19,7 +19,7 @@ clocks:
         - cen_oki
 audio:
 
-  gain: 0.79
+  gain: 1.8
   rsum: 6k
   channels:
     - { name: fm,  module: jt51,   rsum: 12k, pre: 0.52 }

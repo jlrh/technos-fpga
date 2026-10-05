@@ -93,8 +93,8 @@ jtshadfrce_main u_main(
     .snd_on     ( snd_on        ),
     .snd_latch  ( snd_latch     ),
 
-    .joystick1  ( joystick1[6:0]),
-    .joystick2  ( joystick2[6:0]),
+    .joystick1  ( joystick1[9:0]),
+    .joystick2  ( joystick2[9:0]),
     .cab_1p     ( cab_1p[1:0]   ),
     .coin       ( coin[1:0]     ),
     .service    ( service       ),

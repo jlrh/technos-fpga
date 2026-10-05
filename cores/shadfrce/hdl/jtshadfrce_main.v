@@ -46,8 +46,8 @@ module jtshadfrce_main(
     output reg           snd_on,
     output reg    [ 7:0] snd_latch,
 
-    input         [ 6:0] joystick1,
-    input         [ 6:0] joystick2,
+    input         [ 9:0] joystick1,
+    input         [ 9:0] joystick2,
     input         [ 1:0] cab_1p,
     input         [ 1:0] coin,
     input                service,
@@ -172,6 +172,8 @@ end
 
 wire [7:0] p1  = { cab_1p[0], joystick1[6:4], joystick1[3:0] };
 wire [7:0] p2  = { cab_1p[1], joystick2[6:4], joystick2[3:0] };
+
+wire [7:0] extra = { 2'b11, joystick2[9:7], joystick1[9:7] };
 wire [3:0] sys = { 1'b1, service, coin[1], coin[0] };
 wire [7:0] dsw1 = dipsw[7:0], dsw2 = dipsw[15:8];
 
@@ -179,7 +181,7 @@ always @(posedge clk) begin
     case( A[2:1] )
         2'd0: io_dout <= { 2'b0, dsw2[7:6], sys, p1 };
         2'd1: io_dout <= { 2'b0, dsw2[5:0], p2 };
-        2'd2: io_dout <= { 2'b0, dsw1[5:0], 8'hff };
+        2'd2: io_dout <= { 2'b0, dsw1[5:0], extra };
         2'd3: io_dout <= { 2'b0, 3'b111, vblank, dsw1[7:6], 8'hff };
     endcase
 end
