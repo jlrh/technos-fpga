@@ -13,7 +13,7 @@ skip.setnames = [ "shadfrceu" ]
 
 [buttons]
 names = [
-    { machine="shadfrce", names="Punch,Jump,Special" },
+    { machine="shadfrce", names="Punch,Kick,Jump" },
 ]
 
 [dipsw]
